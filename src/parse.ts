@@ -3,7 +3,7 @@ import * as std from "https://deno.land/std@0.79.0/flags/mod.ts";
 /**
  * Parse command string into std Args.
  * @param {string} command - original command for parse
- * @param {object} opts - options to pass std.parse
+ * @param {std.ArgParsingOptions} opts - options to pass std.parse
  * @return {std.Args}
  */
 export function parse (command:string, opts={}): std.Args {
