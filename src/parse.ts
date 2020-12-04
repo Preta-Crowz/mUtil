@@ -1,6 +1,6 @@
-import { Args, parse } from "https://deno.land/std@0.79.0/flags/mod.ts";
+import * as std from "https://deno.land/std@0.79.0/flags/mod.ts";
 
-export function parse (command:string, opts={}): Args {
+export function parse (command:string, opts={}): std.Args {
   let splited:string[] = command.split(' ');
   let parsed:string[] = [];
   let data:string = "";
@@ -21,5 +21,5 @@ export function parse (command:string, opts={}): Args {
       parsed.push(curr);
     }
   }
-  return parse(parsed, opts);
+  return std.parse(parsed, opts);
 }
