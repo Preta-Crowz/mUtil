@@ -2,7 +2,7 @@ import * as std from "https://deno.land/std@0.79.0/flags/mod.ts";
 
 /**
  * Parse command string into std Args.
- * @function
+ * @method parse
  * @param {string} command - original command for parse
  * @param {object} opts - options to pass std.parse
  * @return {std.Args}
