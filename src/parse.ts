@@ -29,3 +29,26 @@ export function parse (command:string, opts={}): std.Args {
   }
   return std.parse(parsed, opts);
 }
+
+/**
+ * Set alias to args.
+ * @param {std.Args} args - original args
+ * @return {std.Args}
+ */
+export function reAlias (args:std.Args,
+  alias:Record<string, string | string[]> = {}): std.Args{
+
+  for (var v in alias) {
+    let target:string[] = [];
+    if (typeof alias[v] === "string") target = [alias[v]] as string[];
+    else target = alias[v] as string[];
+
+    for (var k of target){
+      if (!(k in args)) continue;
+      args[v] = args[k];
+      delete args[k];
+    }
+  }
+
+  return args;
+}
